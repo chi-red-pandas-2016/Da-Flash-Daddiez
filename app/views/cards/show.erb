@@ -1,0 +1,5 @@
+<p><%= @card.question %></p>
+<form method="post" action="/cards/<%= @card.id %>/guesses">
+  <input type="text" name="answer">
+  <input type="submit" value="Submit">
+</form>

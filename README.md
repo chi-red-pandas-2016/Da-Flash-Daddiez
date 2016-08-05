@@ -1,4 +1,4 @@
-# Pillics-Blocked-Naughts
+# Flash Daddiez
 flashcardzzzzz
 
 ##Team Normz
@@ -13,3 +13,36 @@ flashcardzzzzz
 * Cookies(?)
 * Respect all ideas
 * GOAL: MVP by end of Friday
+* "S".gsub("Z")
+
+###Backlog:
+* Creating Q+A decks (nick and keith)
+* Creating registration/authentication (tim and derick)
+* Creating homepage/basic
+* Creating user profile
+* Creating quiz (nick and keith)
+* Create finish w/ quiz page
+
+###HTTP Routes:
+get / 
+get /users/new
+post /users
+get /users/:user_id
+get /decks/:deck_id/cards/:card_id
+post /decks
+get /login
+post /login
+get /logout
+
+###Controllers
+* users
+* login
+* decks
+
+###Views
+* users/new && users/show
+
+###Stretch Goals
+* JQuery
+* Color scheme for individual user
+* Check off deck for user when deck is 100% done

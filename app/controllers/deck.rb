@@ -11,11 +11,11 @@ get '/decks/:deck_id/cards/:card_id' do
 end
 
 post '/cards/:card_id/guesses' do
-  p params.inspect
-  p session.inspect
-  # card = Card.find(params[:card_id])
-  # @round = Round.find(session[:round_id])
-  # if @round.compare_answer(card, params[:answer])
-  #   erb :sup
-  # end
+  card = Card.find(params[:card_id])
+  @round = Round.find(session[:round_id])
+  if @round.compare_answer(card, params[:answer])
+    erb :sup
+  end
 end
+
+'/' or '/decks'

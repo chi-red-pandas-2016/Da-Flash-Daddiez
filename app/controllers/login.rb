@@ -6,7 +6,7 @@ post '/login' do
   user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/' #need to send back to index/flashcardpage
+      redirect "/index/#{user.id}" #need to send back to index/flashcardpage
     else
       erb :login
     end
@@ -24,4 +24,9 @@ post '/login/new' do
 
   redirect '/login' if @new_user.id
   erb :login_new
+end
+
+delete '/login' do
+  session[:user_id] = nil
+  redirect '/login'
 end

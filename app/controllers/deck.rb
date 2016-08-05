@@ -17,5 +17,3 @@ post '/cards/:card_id/guesses' do
     erb :sup
   end
 end
-
-'/' or '/decks'

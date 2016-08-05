@@ -25,11 +25,8 @@ post '/login/new' do
   redirect '/login' if @new_user.id
   erb :login_new
 end
-<<<<<<< HEAD
-=======
 
 delete '/login' do
   session[:user_id] = nil
   redirect '/login'
 end
->>>>>>> 84127c231d345f4a6760005b4b3e903ff67b36aa

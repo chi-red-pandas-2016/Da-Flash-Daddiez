@@ -17,9 +17,9 @@ class Round < ActiveRecord::Base
   end
 
 
-  if check_answer(user_answer)
+  # if check_answer(user_answer)
 
-  # def correct?
+  # # def correct?
   # end
 
 end

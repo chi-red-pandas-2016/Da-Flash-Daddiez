@@ -29,7 +29,9 @@ get /users/new
 post /users
 get /users/:user_id
 get /decks/:deck_id/cards/:card_id
-post /decks
+post /cards/:card_id/guesses
+get /users/:user_id/rounds/:round_id
+
 get /login
 post /login
 get /logout

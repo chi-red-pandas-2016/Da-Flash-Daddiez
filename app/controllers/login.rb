@@ -11,3 +11,17 @@ post '/login' do
       erb :login
     end
 end
+
+get '/login/new' do
+  erb :login_new
+end
+post '/login/new' do
+  @errors = []
+  @new_user = User.new(username: params[:username])
+  @new_user.password = params[:password]
+  @new_user.save
+  @errors << @new_user.errors.full_messages
+
+  redirect '/login' if @new_user.id
+  erb :login_new
+end

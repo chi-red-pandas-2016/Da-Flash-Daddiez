@@ -5,9 +5,11 @@ end
 post '/login' do
   user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
+      @login_error = nil
       session[:user_id] = user.id
       redirect "/users/#{user.id}" #need to send back to index/flashcardpage
     else
+      @login_error = "Username or Password incorrect"
       erb :login
     end
 end

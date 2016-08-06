@@ -1,28 +1,48 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>Quizlet</title>
+  <title>Flash Daddiez</title>
 </head>
 <body>
-  <%if session[:user_id] %>
-  <a href="/users/<%=session[:user_id]%>">Home</a>
-  <%else%>
-  <a href="/">Home</a>
-  <%end%>
-  <%= yield %>
+  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
+    <div class="max-w-700 center wrap-float">
+      <nav class="clearfix mar-b-1">
+        <ul class="no-bullets no-margin no-padding right">
+        <%if session[:user_id]%>
+  
+          <li class="pipe-separate t-light-green left"><a href="/users/<%=session[:user_id]%>">Home</a></li><li class="pipe-separate t-light-green left">
+          <form action="/login" method="post">
+            <input type="submit" value="Logout" style="button">
+            <input type="hidden" name="_method" value="delete">
+          </form> </li>
+          <%else%>
+          <a href="/">Home</a>
+          <%end%>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="logo-container">
+        
+        <h1>Flash Daddiez</h1>
+        <img src="https://avatars3.githubusercontent.com/u/17557735?v=3&s=460" class="center block" >
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
+    <div class="max-w-700 center">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

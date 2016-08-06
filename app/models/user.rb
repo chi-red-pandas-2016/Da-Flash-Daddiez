@@ -17,4 +17,3 @@ class User < ActiveRecord::Base
 
 end
 
-User.first.guesses

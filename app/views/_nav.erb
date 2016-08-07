@@ -1,16 +1,14 @@
 <header>
-	<nav>
-		<ul>
-		<li><a href="/">Home</a></li>
+		<ul class="nav">
 			<% if logged_in? %>
-			<li><form action="/sessions" method="POST">
+			<li><a href="/users/<%=current_user.id%>">Home</a></li>
+			<li id="logout"><form action="/sessions" method="POST">
 				<input type="hidden" name="_method" value="DELETE">
 				<input type="submit" value="Log out">
-			</form></li>
+			</form><li>
 			<% else %>
-			<li><a href="/sessions/new">Login</a></li>
-			<li><a href="/users/new">Register</a></li>
+			<li><a href="/sessions/new">Home</a></li>
+			<li id="register"><a href="/users/new">Register</a></li>
 			<% end %>
 		</ul>
-	</nav>
 </header>

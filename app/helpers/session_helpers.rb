@@ -12,4 +12,8 @@ helpers do
     redirect '/login' unless logged_in?
   end
 
+def check_password
+  @user.password == params[:password]
+end
+
 end

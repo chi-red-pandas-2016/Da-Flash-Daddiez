@@ -2,7 +2,6 @@ before do
   @errors = Array.new
 end
 
-
 get '/sessions/new' do
   erb :"/sessions/new"
 end

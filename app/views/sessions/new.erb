@@ -1,6 +1,10 @@
-
+<% if @errors %>
+  <% @errors.each do |error| %>
+  <%= error %>
+  <%end%>
+<%end%>
+<h1>Login to see Nick's Face</h1>
 <form action="/sessions" method="post">
-
   <p><label for="username">Username:</label>
   <input type="text" name="username"/></p>
 
@@ -8,5 +12,4 @@
   <input type="password" name="password"/></p>
 
   <input type="submit" value="Login"/>
-  
 </form>

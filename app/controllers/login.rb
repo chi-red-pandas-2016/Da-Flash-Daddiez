@@ -11,7 +11,7 @@ post '/login' do
 
     else
       @login_error = "Username or Password incorrect"
-      erb :login, :layout => "layout.erb"
+      erb :login#, :layout => "layout.erb"
     end
 end
 

@@ -1,7 +1,7 @@
 get '/' do
-
   erb :index
 end
+
 
 
 get '/users/:user_id' do

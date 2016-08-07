@@ -5,21 +5,19 @@ class Round < ActiveRecord::Base
   has_many :guesses, through: :cards
 
   def shuffle
-    @cards = self.cards.to_a.shuffle
+   @shuffled_cards = self.cards.to_a.shuffle
   end
 
-  # def show_card
-  #   @cards[0].question
-  # end
-
-  def compare_answer(card, user_answer)
+  def answer_is_true(card, user_answer)
     card.answer.downcase == user_answer.downcase
   end
 
+  def score
+    # Round.last.guesses.map(&:correct).reduce(:+)
+    last_round = self.id
+    guesses = Round.last.guesses.to_a.find_all { |guess| guess.round_id == last_round}
+    guesses.map(&:correct).reduce(:+)
+  end
 
-  # if check_answer(user_answer)
-
-  # # def correct?
-  # end
 
 end

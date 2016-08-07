@@ -1,0 +1,14 @@
+<%if @errors%>
+  <%@errors.each do |error| %>
+  <%=error%>
+  <%end%>
+<%end%>
+<form action="/users" method="post">
+  <p><label for="username">Username:</label>
+  <input type="text" name="username"><p>
+
+  <p><label for="password">Password:</label>
+  <input type="password" name="plaintext_password"><p>
+
+  <p><input type="submit" value="Register User"><p>
+</form>

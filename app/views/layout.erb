@@ -10,15 +10,15 @@
   <title>FLASH daddy</title>
 </head>
 <body>
-  <nav>
+  <header>
+    <%if session[:user_id] %>
+    <h1 style="color: blue;"><a href="/">Quiz Central</a></h1>  
+    <%else%>
+    <a href="/users/<%=session[:user_id]%>">Home</a>
+    <%end%>
+    <nav></nav>
+  </header>
 
-  </nav>
-  <%if session[:user_id] %>
-  <a href="/">Home</a>
-  
-  <%else%>
-  <a href="/users/<%=session[:user_id]%>">Home</a>
-  <%end%>
   <%= yield %>
 </body>
 </html>

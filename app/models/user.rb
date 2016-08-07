@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
  has_many :rounds
  has_many :guesses, through: :rounds
   validates :username, uniqueness: true, presence: true
-
   def password
     @password ||= BCrypt::Password.new(hashed_password)
   end
@@ -17,3 +16,4 @@ class User < ActiveRecord::Base
   end
 
 end
+

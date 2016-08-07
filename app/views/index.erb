@@ -3,7 +3,7 @@
 <% if session[:user_id] %>
 	<a href="/users/<%= session[:user_id] %>">My Profile</a>
 <% else %>
-	<a href="/login">Login Here</a>
+	<a href="/sessions/new">Login Here</a>
 <% end %>
 <br>
 <br>
@@ -12,4 +12,3 @@
 <% Deck.all.each do |deck| %>
 	<li><a href="/decks/<%= deck.id %>/cards/1"><%= deck.name %></a></li>
 <% end %>
-

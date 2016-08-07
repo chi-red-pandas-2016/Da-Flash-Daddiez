@@ -11,11 +11,7 @@
 </head>
 <body>
   <header>
-    <%if session[:user_id] %>
-    <h1 style="color: blue;"><a href="/">Quiz Central</a></h1>  
-    <%else%>
-    <a href="/users/<%=session[:user_id]%>">Home</a>
-    <%end%>
+    <h1 style="color: blue;"><a href="/">Quiz Central</a></h1> 
     <nav></nav>
   </header>
 

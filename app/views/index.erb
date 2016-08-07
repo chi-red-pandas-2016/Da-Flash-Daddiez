@@ -1,6 +1,6 @@
 
 <header>
-	<h1>Quiz Central</h1>
+	<h1 style="color: blue;">Quiz Central</h1>
 	<img src='flash_daddy_logo.jpeg' alt='Flash Daddy Logo' />
 </header>
 <% if session[:user_id] %>
@@ -11,6 +11,7 @@
 <br>
 <br>
 
+<h3>Quizzes</h3>
 <% Deck.all.each do |deck| %>
 	<li><a href="/decks/<%= deck.id %>/cards/1"><%= deck.name %></a></li>
 <% end %>

@@ -1,6 +1,6 @@
 get '/decks/:deck_id/cards/:card_id' do
   if session[:user_id] == nil
-    redirect '/login'
+    redirect '/sessions/new'
   end
   session[:card_array] = []
   if session[:card_array].empty?

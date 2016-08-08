@@ -1,7 +1,3 @@
-get '/' do
-  "IDK what goes here"
-end
-
 get '/users/new' do
   erb :'/users/new'
 end

@@ -1,5 +1,5 @@
 get '/decks/:deck_id/cards/:card_id' do
-  if session[:card_array].empty?
+  if session[:card_array] == nil || session[:card_array].empty?
     @user = User.find(session[:user_id])
     @round = Round.create(user_id: @user.id, deck_id: params[:deck_id])
     session[:card_array] = @round.cards.shuffle

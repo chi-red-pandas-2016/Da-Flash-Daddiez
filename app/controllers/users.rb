@@ -4,7 +4,7 @@ end
 
 post '/users' do
   @user = User.new(username: params[:username])
-  @user.password = params[:hashed_password]
+  @user.password = params[:plaintext_password]
   if @user.save
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}"

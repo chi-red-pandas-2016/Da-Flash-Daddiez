@@ -1,5 +1,5 @@
 get '/users/new' do
-  erb :"/views/users/new"
+  erb :'/users/new'
 end
 
 post '/users' do
